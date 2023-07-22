@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im';
 import './Naviagarionbar.css'
@@ -25,8 +24,8 @@ const Navigationbar = () => {
     }
     return (
        <div className='bg-slate-800'>
-       <div className='md:navbar md:w-11/12 mx-auto text-slate-300 p-2 md:p-0'>
-       {/* <div className='md:navbar md:pt-0 pt-2 w-11/12 mx-auto text-slate-300'> */}
+       <div className='lg:navbar lg:w-11/12 mx-auto text-slate-300 p-2 lg:p-0'>
+       {/* <div className='lg:navbar lg:pt-0 pt-2 w-11/12 mx-auto text-slate-300'> */}
         <div className="navbar-start uppercase">
            <p>english</p>
            <div className="custom-divider"></div>
@@ -42,7 +41,7 @@ const Navigationbar = () => {
           <h3 className='flex items-center'> <AiOutlineClockCircle /> MON-FRI 7:00AM-4:68PM</h3>
         </div>
         <hr className='my-2'/>
-        <div className="navbar-end mb-3 md:mb-0">
+        <div className="navbar-end mb-3 lg:mb-0">
           <button>LOGIN</button> 
           <div className="custom-divider"></div>
           <button> CONTACT</button>
