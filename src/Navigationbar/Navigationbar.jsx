@@ -25,12 +25,14 @@ const Navigationbar = () => {
     }
     return (
        <div className='bg-slate-800'>
-       <div className='navbar   w-11/12 mx-auto text-slate-300'>
+       <div className='md:navbar md:w-11/12 mx-auto text-slate-300 p-2 md:p-0'>
+       {/* <div className='md:navbar md:pt-0 pt-2 w-11/12 mx-auto text-slate-300'> */}
         <div className="navbar-start uppercase">
            <p>english</p>
            <div className="custom-divider"></div>
            <p>bangla</p>
         </div>
+        <hr className='my-2' />
 {/* npm install react-icons --save */}
         <div className="navbar-center">
           <h3 className='flex items-center'> <ImLocation /> 2925 SWICK HILL STREET, DHAKA, NC23256</h3>
@@ -39,7 +41,8 @@ const Navigationbar = () => {
            +880123456789</h3>
           <h3 className='flex items-center'> <AiOutlineClockCircle /> MON-FRI 7:00AM-4:68PM</h3>
         </div>
-        <div className="navbar-end">
+        <hr className='my-2'/>
+        <div className="navbar-end mb-3 md:mb-0">
           <button>LOGIN</button> 
           <div className="custom-divider"></div>
           <button> CONTACT</button>
