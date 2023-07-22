@@ -18,6 +18,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import CollegesDetails from './pages/CollegeDetails/CollegesDetails.jsx';
+import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -38,7 +39,8 @@ const router = createBrowserRouter([
         path:'/collegedetails/:id',
         element: <CollegesDetails></CollegesDetails>,
         loader: ({params})=> fetch(`http://localhost:3000/collegedetails/${params.id}`)
-      }
+      },
+      {path: '*', element: <ErrorPage></ErrorPage>},
     ]
   },
 ]);
