@@ -17,9 +17,12 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import CollegesDetails from './pages/CollegeDetails/CollegesDetails.jsx';
 
 // Create a client
 const queryClient = new QueryClient()
+
+
 
 
 const router = createBrowserRouter([
@@ -30,6 +33,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>
+      },
+      {
+        path:'/collegedetails/:id',
+        element: <CollegesDetails></CollegesDetails>,
+        loader: ({params})=> fetch(`http://localhost:3000/collegedetails/${params.id}`)
       }
     ]
   },

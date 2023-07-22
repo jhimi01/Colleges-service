@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CardCollege = ({item}) => {
+    
    const {college} = item;
-   console.log(college)
+   console.log('college',item._id)
     return (
         <div className='card'>
             <img className='object-cover' src={college?.image} alt="" />
@@ -19,7 +21,7 @@ const CardCollege = ({item}) => {
                 {college?.events.map(event => <li key={event?.event_name}>{event?.event_name}</li>)}
             </div>
             <div className="card-actions justify-end">
-     <button className="btn btn-secondary w-full rounded-none">Details</button>
+     <Link to={`/collegedetails/${item._id}`}><button className="btn btn-secondary w-full rounded-none">Details</button></Link>
     </div>
             </div>
         </div>
