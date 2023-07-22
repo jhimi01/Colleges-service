@@ -21,7 +21,12 @@ const CardCollege = ({item}) => {
                 {college?.events.map(event => <li key={event?.event_name}>{event?.event_name}</li>)}
             </div>
             <div className="card-actions justify-end">
-     <Link to={`/collegedetails/${item._id}`}><button className="btn btn-secondary w-full rounded-none">Details</button></Link>
+     <Link className='w-full' to={`/collegedetails/${item._id}`}>
+          <button  className='btn btn-secondary w-full rounded-none'>
+          Details
+          </button>
+     </Link>
+            
     </div>
             </div>
         </div>

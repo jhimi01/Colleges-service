@@ -1,31 +1,77 @@
 import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im';
 import './Naviagarionbar.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLoaderData, useLocation } from 'react-router-dom';
 
 const Navigationbar = () => {
+  const location = useLocation()
+  console.log(location)
     const Navigation = ()=>{
           return(
             <>
-                 <li><a>Home</a></li>
-                 <li><a>Colleges</a></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>Service</summary>
-          <ul className="p-2">
-            <li><a>Service 1</a></li>
-            <li><a>Service 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>My College</a></li>
-      <li><a>Admission</a></li>
-            </>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-[#32589c]" : ""
+              }
+            >
+              <li>
+                <a>Home</a>
+              </li>
+            </NavLink>
+              <li tabIndex={0}>
+                <details>
+                  <summary>Service</summary>
+                  <ul className="p-2 flex flex-col">
+                    <li>
+                      <a>Service</a>
+                    </li>
+                    <li>
+                      <a>Service details</a>
+                    </li>
+                    <li>
+                      <a>FAQ's</a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            {/* </NavLink> */}
+            <NavLink
+              to="/docotors"
+              className={({ isActive }) =>
+                isActive ? "text-[#f59a66]" : ""
+              }
+            >
+              <li>
+                <a>COlleges</a>
+              </li>
+            </NavLink>
+            <NavLink
+              to="/treatments"
+              className={({ isActive }) =>
+                isActive ? "text-[#f59a66]" : ""
+              }
+            >
+              <li>
+                <a>Admission</a>
+              </li>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-[#f59a66]" : ""
+              }
+            >
+              <li>
+                <a>My College</a>
+              </li>
+            </NavLink>
+          </>
           )
     }
     return (
        <div className='bg-slate-800'>
-       <div className='lg:navbar lg:w-11/12 mx-auto text-slate-300 p-2 lg:p-0'>
+      {location?.pathname === '/' && <div className='lg:navbar lg:w-11/12 mx-auto text-slate-300 p-2 lg:p-0'>
        {/* <div className='lg:navbar lg:pt-0 pt-2 w-11/12 mx-auto text-slate-300'> */}
         <div className="navbar-start uppercase">
            <p>english</p>
@@ -49,7 +95,7 @@ const Navigationbar = () => {
           <div className="custom-divider"></div>
           <p><AiOutlineSearch /></p>
         </div>
-       </div>
+       </div>}
        {/* ------------------------------- */}
          <div className="navbar bg-base-100  w-11/12 mx-auto">
   <div className="navbar-start">
@@ -64,7 +110,7 @@ const Navigationbar = () => {
     <Link to='/' className="btn btn-ghost normal-case text-xl">College Service</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1  font-semibold">
      <Navigation />
     </ul>
   </div>
