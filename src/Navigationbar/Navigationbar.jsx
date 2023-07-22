@@ -1,26 +1,30 @@
 import React from 'react';
+import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai';
+import { ImLocation } from 'react-icons/im';
 
 const Navigationbar = () => {
     const Navigation = ()=>{
           return(
             <>
-                 <li><a>Item 1</a></li>
+                 <li><a>Home</a></li>
+                 <li><a>Colleges</a></li>
       <li tabIndex={0}>
         <details>
-          <summary>Parent</summary>
+          <summary>Service</summary>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a>Service 1</a></li>
+            <li><a>Service 2</a></li>
           </ul>
         </details>
       </li>
-      <li><a>Item 3</a></li>
+      <li><a>My College</a></li>
+      <li><a>Admission</a></li>
             </>
           )
     }
     return (
-       <>
-       <div className='navbar'>
+       <div className='bg-slate-800'>
+       <div className='navbar   w-11/12 mx-auto text-slate-300'>
         <div className="navbar-start uppercase">
            <p>english</p>
            <div className="divider divider-horizontal"></div>
@@ -28,17 +32,22 @@ const Navigationbar = () => {
         </div>
 {/* npm install react-icons --save */}
         <div className="navbar-center">
-          <p></p>
-          <p>
-          {/* <AiFillPhone /> */}
-           +880123456789</p>
-          <p></p>
+          <h3 className='flex items-center'> <ImLocation /> 2925 SWICK HILL STREET, DHAKA, NC23256</h3>
+          <h3 className='flex items-center'>
+          <AiFillPhone />
+           +880123456789</h3>
+          <h3 className='flex items-center'> <AiOutlineClockCircle /> MON-FRI 7:00AM-4:68PM</h3>
         </div>
         <div className="navbar-end">
-
+          <button>LOGIN</button> 
+          <div className="divider divider-horizontal"></div>
+          <button> CONTACT</button>
+          <div className="divider divider-horizontal"></div>
+          <p><AiOutlineSearch /></p>
         </div>
        </div>
-         <div className="navbar bg-base-100">
+       {/* ------------------------------- */}
+         <div className="navbar bg-base-100  w-11/12 mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +57,7 @@ const Navigationbar = () => {
        <Navigation />
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-xl">College Service</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -56,10 +65,10 @@ const Navigationbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <button className="btn">Get Started</button>
   </div>
 </div>
-       </>
+       </div>
     );
 };
 
