@@ -36,7 +36,7 @@ const CollegesSearch = () => {
         </button>
       </div>
         </div>
-        <div className='flex items-center justify-center gap-10 mt-7'> 
+        <div className='flex items-center justify-center gap-2  mt-7'> 
         {
             filtercollege.slice(0, 3).map(item => <CardCollege item={item} key={item._id}></CardCollege>)
         } </div>
