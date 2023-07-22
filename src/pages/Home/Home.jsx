@@ -14,7 +14,7 @@ const Home = () => {
                 <p className='lg:my-4 my-2'>The study programs of the enroll campus Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <button className='bg-amber-600 py-2 px-4'>Learn More</button>
             </div>
-            <div className='text-center py-3 lg:py-9 px-20 mb-2'>
+            <div className='text-center bg-base-200 py-3 lg:py-9 px-20 mb-2'>
                 <h2 className='text-2xl lg:text-4xl '>UA Degree programs </h2>
                 <p className='lg:my-4 my-2'>The study programs of the enroll campus Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <button className='bg-amber-600 py-2 px-4 text-white'>Learn More</button>

@@ -33,7 +33,7 @@ const Navigationbar = () => {
         </div>
         <hr className='my-2' />
 {/* npm install react-icons --save */}
-        <div className="navbar-center">
+        <div className="navbar-center gap-3">
           <h3 className='flex items-center'> <ImLocation /> 2925 SWICK HILL STREET, DHAKA, NC23256</h3>
           <h3 className='flex items-center'>
           <AiFillPhone />
