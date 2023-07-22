@@ -1,6 +1,7 @@
 import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im';
 import './Naviagarionbar.css'
+import { Link } from 'react-router-dom';
 
 const Navigationbar = () => {
     const Navigation = ()=>{
@@ -60,7 +61,7 @@ const Navigationbar = () => {
        <Navigation />
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">College Service</a>
+    <Link to='/' className="btn btn-ghost normal-case text-xl">College Service</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
