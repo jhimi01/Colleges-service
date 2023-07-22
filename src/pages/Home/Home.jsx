@@ -1,5 +1,6 @@
 import React from 'react';
 import CollegesSearch from './CollegesSearch';
+import Features from './Features';
 
 const Home = () => {
     return (
@@ -23,6 +24,8 @@ const Home = () => {
         </div>
 
         <CollegesSearch></CollegesSearch>
+
+        <Features></Features>
        </>
     );
 };
