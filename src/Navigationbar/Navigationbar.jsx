@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im';
+import './Naviagarionbar.css'
 
 const Navigationbar = () => {
     const Navigation = ()=>{
@@ -27,7 +28,7 @@ const Navigationbar = () => {
        <div className='navbar   w-11/12 mx-auto text-slate-300'>
         <div className="navbar-start uppercase">
            <p>english</p>
-           <div className="divider divider-horizontal"></div>
+           <div className="custom-divider"></div>
            <p>bangla</p>
         </div>
 {/* npm install react-icons --save */}
@@ -40,9 +41,9 @@ const Navigationbar = () => {
         </div>
         <div className="navbar-end">
           <button>LOGIN</button> 
-          <div className="divider divider-horizontal"></div>
+          <div className="custom-divider"></div>
           <button> CONTACT</button>
-          <div className="divider divider-horizontal"></div>
+          <div className="custom-divider"></div>
           <p><AiOutlineSearch /></p>
         </div>
        </div>
