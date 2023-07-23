@@ -60,7 +60,7 @@ const Navigationbar = () => {
               </li>
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/mycollege"
               className={({ isActive }) =>
                 isActive ? "text-[#32589c] bg-base-200" : ""
               }

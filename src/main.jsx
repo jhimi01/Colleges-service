@@ -23,6 +23,7 @@ import SignUp from './pages/SingUp/SignUp.jsx';
 import ProfilePage from './ProfilePage/ProfilePage.jsx';
 import PrivateRoute from './route/PrivateRoute.jsx';
 import Admission from './pages/Admission/Admission.jsx';
+import MyCollege from './pages/MyCollege/MyCollege.jsx';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path:'/admission',
         element: <Admission></Admission>
+      },
+      {
+        path:'/mycollege',
+        element: <MyCollege></MyCollege>
       },
       {
         path:'/login',
