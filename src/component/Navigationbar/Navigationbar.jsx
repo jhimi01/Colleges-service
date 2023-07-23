@@ -131,7 +131,7 @@ const Navigationbar = () => {
   <div className="navbar-end">
   {!user ?  <Link to='/login'><button className='font-semibold mr-6 bg-base-200 py-2 px-4'>LOGIN</button></Link> : <div className="dropdown text-slate-900">
   <label tabIndex={0} className="btn m-1">{user?.displayName}</label>
-  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 font-semibold">
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box font-semibold">
     <Link to='/profile'><li><a>Profile</a></li></Link>
     <li onClick={handleLogout}><a>Log Out</a></li>
   </ul>

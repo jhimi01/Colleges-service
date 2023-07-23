@@ -8,8 +8,10 @@ import ScrollTop from '../component/ScrollToTop/ScrollTop';
 const MainLayout = () => {
     return (
         <>
+        <div className='overflow-hidden'> 
+         </div>
          <Navigationbar></Navigationbar>
-         <Outlet></Outlet>   
+        <Outlet></Outlet>  
          <ScrollTop></ScrollTop>
          <Footer></Footer>
         </>

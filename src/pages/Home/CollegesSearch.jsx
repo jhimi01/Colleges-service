@@ -39,7 +39,7 @@ const CollegesSearch = () => {
        {filtercollege.length > 0 ?  <div className='md:flex items-center justify-center gap-2  mt-7'> 
         {
             filtercollege.slice(0, 3).map(item => <CardCollege item={item} key={item._id}></CardCollege>)
-        } </div> : <p className='text-2xl text-gray-600 text-center my-5 uppercase'>"no data found"</p>}
+        } </div> : <p className='text-2xl text-gray-600 text-center my-5 w-full uppercase'>"no data found"</p>}
      </div>
     );
 };
