@@ -12,7 +12,7 @@ const Navigationbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-[#32589c]" : ""
+                isActive ? "text-[#32589c] bg-base-200" : ""
               }
             >
               <li>
@@ -37,9 +37,9 @@ const Navigationbar = () => {
               </li>
             {/* </NavLink> */}
             <NavLink
-              to="/docotors"
+              to="/colleges"
               className={({ isActive }) =>
-                isActive ? "text-[#32589c]" : ""
+                isActive ? "text-[#32589c] bg-base-200" : ""
               }
             >
               <li>
@@ -49,7 +49,7 @@ const Navigationbar = () => {
             <NavLink
               to="/treatments"
               className={({ isActive }) =>
-                isActive ? "text-[#32589c]" : ""
+                isActive ? "text-[#32589c] bg-base-200" : ""
               }
             >
               <li>
@@ -59,7 +59,7 @@ const Navigationbar = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? "text-[#32589c]" : ""
+                isActive ? "text-[#32589c] bg-base-200" : ""
               }
             >
               <li>

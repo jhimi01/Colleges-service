@@ -93,8 +93,8 @@ const Gallery = () => {
             alt={image.alt}
             className="w-full h-64 object-cover"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-            <h2 className="text-white text-2xl mb-2 uppercase">{image.title}</h2>
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 text-center">
+            <h2 className="text-white text-2xl mb-2 uppercase font-bold">{image.title}</h2>
             <p className="text-white text-base text-center">{image.description}</p>
             <p className="text-white text-base text-center">Graduation Year : {image.graduateYear}</p>
           </div>
