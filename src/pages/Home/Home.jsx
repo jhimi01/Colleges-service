@@ -3,6 +3,7 @@ import CollegesSearch from './CollegesSearch';
 import Features from './Features';
 import Gallery from './Gallery';
 import ResearchPaper from './ResearchPaper';
+import ReviewSection from './ReviewSection';
 
 const Home = () => {
     return (
@@ -32,6 +33,8 @@ const Home = () => {
         <Gallery></Gallery>
 
         <ResearchPaper></ResearchPaper>
+
+        <ReviewSection></ReviewSection>
        </>
     );
 };
