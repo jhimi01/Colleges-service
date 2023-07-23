@@ -32,9 +32,9 @@ const ResearchPaper = () => {
     return (
         <div className="container mx-auto px-4 py-8">
         <h2 className='text-4xl font-semibold text-center mb-10'>Recommended Research Papers</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
           {papersData.map((paper, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+            <div key={index} className="bg-base-100 rounded-lg p-4 shadow-lg">
               <h3 className="text-lg font-semibold mb-2 bg-base-200 p-2">{paper.title}</h3>
               <p className="text-sm text-gray-600 mb-2">{paper.authors}</p>
               
