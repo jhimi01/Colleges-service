@@ -41,7 +41,7 @@ const Admission = () => {
             showConfirmButton: false,
             timer: 1500
           })
-          form.reset();
+           form.reset();
     }) .catch((error) => {
         console.error('Post request failed:', error);
         // Handle error if the post request fails

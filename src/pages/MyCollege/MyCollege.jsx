@@ -14,7 +14,10 @@ const MyCollege = () => {
         <title>My College | College</title>
       </Helmet>
       <SubBanner headerTitle={'My College'}></SubBanner>
-            this is my college
+      <div>
+        {admissions.map(admis=> <p key={admis._id}>{admis?.dateOfBirth}</p> )}
+      </div>
+           
         </div>
     );
 };
