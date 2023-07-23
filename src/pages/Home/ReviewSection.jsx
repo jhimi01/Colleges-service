@@ -18,7 +18,7 @@ const ReviewSection = () => {
       ];
     
       return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 mb-20">
           <h2 className="text-3xl font-bold mb-4">Customer Reviews</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {reviewsData.map((review, index) => (

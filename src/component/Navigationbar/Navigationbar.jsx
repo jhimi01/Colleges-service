@@ -89,7 +89,7 @@ const Navigationbar = () => {
         </div>
         <hr className='my-2'/>
         <div className="navbar-end mb-3 lg:mb-0">
-          <button>LOGIN</button> 
+          <Link to='/login'><button>LOGIN</button></Link> 
           <div className="custom-divider"></div>
           <button> CONTACT</button>
           <div className="custom-divider"></div>

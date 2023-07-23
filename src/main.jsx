@@ -11,15 +11,15 @@ import Home from './pages/Home/Home.jsx';
 
 
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
 import CollegesDetails from './pages/CollegeDetails/CollegesDetails.jsx';
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Colleges from './pages/Colleges/Colleges.jsx';
+import Login from './pages/Login/Login.jsx';
+import AuthProvider from './Provider/AuthProvider.jsx';
+import SignUp from './pages/SingUp/SignUp.jsx';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -45,6 +45,15 @@ const router = createBrowserRouter([
         element: <CollegesDetails></CollegesDetails>,
         loader: ({params})=> fetch(`http://localhost:3000/collegedetails/${params.id}`)
       },
+      {
+        path:'/login',
+        element: <Login></Login>
+      },
+      {
+        path:'/signup',
+        // element: <p>hello</p>
+        element: <SignUp></SignUp>
+      },
       {path: '*', element: <ErrorPage></ErrorPage>},
     ]
   },
@@ -52,9 +61,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+  <AuthProvider>
    <QueryClientProvider client={queryClient}>
    <RouterProvider router={router} />
-    </QueryClientProvider>
-     
+    </QueryClientProvider> 
+  </AuthProvider>
   </React.StrictMode>,
 )
