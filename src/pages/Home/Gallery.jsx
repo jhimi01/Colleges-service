@@ -80,7 +80,9 @@ const Gallery = () => {
   ];
 
     return (
-<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 lg:w-11/12 mx-auto">
+<div className='lg:w-11/12 mx-auto my-20'>
+<h1 className='text-4xl font-semibold text-center my-5'>Graduation Gallery</h1>
+<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
       {images.map((image, index) => (
         <div
           key={index}
@@ -99,6 +101,7 @@ const Gallery = () => {
         </div>
       ))}
     </div>
+</div>
     );
 };
 

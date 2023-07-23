@@ -4,7 +4,7 @@ import { BiSolidSchool } from 'react-icons/bi';
 
 const Features = () => {
     return (
-        <div className='lg:h-[500px] bg-base-300 my-10'>
+        <div className='lg:h-[500px] bg-base-300 my-20'>
             <div className='lg:flex'>
            <div className="lg:w-1/2 h-[500px]">
             <img className='w-full h-full object-cover' src="https://i.ibb.co/RvV2gMv/priscilla-du-preez-Xk-KCui44i-M0-unsplash.jpg" alt="" />
