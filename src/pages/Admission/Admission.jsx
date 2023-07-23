@@ -39,6 +39,8 @@ const Admission = () => {
       <h1 className='text-2xl font-bold capitalize text-center my-10'>Fill the Form to go to your dream</h1>
         <form onSubmit={handleAddCandidate} className="w-full md:w-3/4 mx-auto text-gray-900 font-semibold my-10">
           <div className="flex mb-3 gap-3">
+          <div className="w-full">
+          <span className="label-text">Select your College</span>
             <select
               className="input-secondary text-gray-900 font-semibold w-full input input-bordered"
               name="college"
@@ -54,9 +56,12 @@ const Admission = () => {
               ))}
             </select>
           </div>
+          </div>
       
             <div>
               <div className="flex mb-3 gap-3">
+             <div className='w-full'>
+             <span className="label-text">Candidate Name</span>
                 <input
                   className="input-secondary uppercase  w-full input input-bordered"
                   value={user?.displayName}
@@ -65,6 +70,9 @@ const Admission = () => {
                   placeholder="Candidate Name"
                   required
                 />
+             </div>
+            <div className='w-full'>
+            <span className="label-text">Subject</span>
                 <input
                   className="input-secondary  w-full input input-bordered"
                   type="text"
@@ -72,10 +80,13 @@ const Admission = () => {
                   placeholder="Subject"
                   required
                 />
+            </div>
               </div>
 
               {/* address */}
               <div className="flex mb-3 gap-3">
+              <div className='w-full'>
+              <span className="label-text">Candidate Phone number</span>
                 <input
                   className="input-secondary  w-full input input-bordered"
                   type="tel"
@@ -83,6 +94,9 @@ const Admission = () => {
                   placeholder="Candidate Phone Number"
                   required
                 />
+              </div>
+               <div className='w-full'>
+               <span className="label-text">Email</span>
                 <input
                   className="input-secondary  w-full input input-bordered"
                   type="email"
@@ -90,17 +104,21 @@ const Admission = () => {
                   placeholder="Your Email"
                   required
                 />
+               </div>
               </div>
 
               {/* date of birth */}
               <div className="flex mb-3 gap-3">
+             <div className='w-full'>
+             <span className="label-text">Date of birth</span>
                 <input
-                  className="input-secondary  w-full input input-bordered"
+                  className="input-secondary w-full input input-bordered"
                   type="date"
                   name="dateOfBirth"
                   placeholder="Date of Birth"
                   required
                 />
+             </div>
               </div>
               <div className="text-center">
                 <input type="submit" className="btn px-5 mt-2 btn-secondary" />
