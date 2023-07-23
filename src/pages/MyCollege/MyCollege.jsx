@@ -15,8 +15,9 @@ const MyCollege = () => {
       </Helmet>
       <SubBanner headerTitle={'My College'}></SubBanner>   
 
-      <div className="overflow-x-auto lg:w-11/12 mx-auto my-10 p-2 lg:p-0">
-  <table className="table">
+      <div className="overflow-x-auto lg:w-11/12 bg-base-300 mx-auto my-10 px-2 lg:px-0 py-5">
+  <h2 className='text-center font-semibold text-3xl py-5'>Admission List </h2>
+  <table className="table-lg table-zebra mx-auto">
     {/* head */}
     <thead>
       <tr>
@@ -35,8 +36,8 @@ const MyCollege = () => {
         {admissions.map((admis, index)=> <tr key={index}>
         <th>{index + 1}</th>
         <td>{admis?.college}</td>
-        <td>{admis?.candidatePhone}</td>
         <td>{admis?.subject}</td>
+        <td>{admis?.candidatePhone}</td>
         <td>{admis?._id.slice(0, 10)}</td>
         <th>
           <button className="btn btn-ghost btn-xs">review</button>
