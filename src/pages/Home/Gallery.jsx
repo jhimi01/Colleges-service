@@ -2,17 +2,6 @@ import React from 'react';
 
 const Gallery = () => {
 
-  // const images = [
-  //   "https://i.ibb.co/xYhs4fh/gra.jpg",
-  //   "https://i.ibb.co/GpwQjbF/gra2.jpg",
-  //   "https://i.ibb.co/XVsvzcN/gra3.jpg",
-  //   "https://i.ibb.co/TqyF0DD/gra4.jpg",
-  //   "https://i.ibb.co/yS9878f/gra5.jpg",
-  //   "https://i.ibb.co/82LRPNX/gra6.jpg",
-  //   "https://i.ibb.co/Pwh6gsn/gra7.jpg",
-  //   "https://i.ibb.co/hxNdRjp/gra8.jpg",
-  //   "https://i.ibb.co/r3Jbptb/gra9.jpg"
-  // ]
   const images = [
     {
       src: 'https://i.ibb.co/xYhs4fh/gra.jpg',
@@ -81,7 +70,7 @@ const Gallery = () => {
 
     return (
 <div className='lg:w-11/12 mx-auto my-20'>
-<h1 className='text-4xl font-semibold text-center my-5'>Graduation Gallery</h1>
+<h1 className='text-4xl font-semibold text-center my-10'>Graduation Gallery</h1>
 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
       {images.map((image, index) => (
         <div
