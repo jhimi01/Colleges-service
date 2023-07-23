@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { FcGoogle } from 'react-icons/fc';
 import { useForm } from 'react-hook-form';
-// import { AuthContext } from '../../providers/AuthProvider';
 import { key } from 'localforage';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -103,7 +102,7 @@ const SignUp = () => {
        
         <div className="hero min-h-screen bg-base-200">
         <Helmet>
-            <title>signup | Doctor care</title>
+            <title>signup | College</title>
         </Helmet>
         <div className="hero-content flex-col md:flex-row-reverse">
            <img className='w-[80%]' src={signupsvg} alt="" />

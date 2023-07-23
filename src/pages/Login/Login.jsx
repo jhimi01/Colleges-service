@@ -61,7 +61,7 @@ const Login = () => {
        
         <div className="hero min-h-screen bg-base-200">
          <Helmet>
-            <title>login | Doctor care</title>
+            <title>Login | College</title>
         </Helmet>
         <div className="hero-content flex-col md:flex-row-reverse">
            <img className='w-full' src={loginsvg} alt="" />

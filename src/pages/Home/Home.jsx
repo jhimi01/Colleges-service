@@ -4,11 +4,15 @@ import Features from './Features';
 import Gallery from './Gallery';
 import ResearchPaper from './ResearchPaper';
 import ReviewSection from './ReviewSection';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
        <>
          <div className='lg:flex gap-2 lg:w-11/12 mx-auto lg:h-[75vh]'>
+         <Helmet>
+            <title>College</title>
+        </Helmet>
          <div className='lg:w-1/2 w-full h-full'>
             <img className='w-full h-[100%] object-cover' src="https://i.ibb.co/HDSBJtj/pexels-pixabay-256490.jpg" alt="" />
          </div>

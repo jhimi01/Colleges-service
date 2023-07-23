@@ -3,6 +3,7 @@ import useColleges from '../../hooks/useColleges';
 import CardCollege from '../../component/CardCollege/CardCollege';
 import SubBanner from '../../component/SubBanner/SubBanner';
 import { FcSearch } from 'react-icons/fc';
+import { Helmet } from 'react-helmet';
 
 const Colleges = () => {
     const [search, setSearch] = useState("");
@@ -20,6 +21,9 @@ const Colleges = () => {
     return (
 
        <>
+        <Helmet>
+            <title>all colleges | College</title>
+        </Helmet>
        <SubBanner headerTitle={'Colleges'}></SubBanner>
    
              <div className="relative w-full lg:w-1/2 mx-auto my-5">
