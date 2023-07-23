@@ -41,7 +41,7 @@ const ResearchPaper = () => {
 
               <p className="text- mb-4 tooltip text-start" data-tip={paper.abstract} >
               {paper.abstract.length > 100
-                ? paper.abstract.slice(0, 100) + '...'
+                ? paper.abstract.slice(0, 100) + '....see more'
                 : paper.abstract}
             </p>
               
