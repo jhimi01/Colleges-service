@@ -20,6 +20,9 @@ import Colleges from './pages/Colleges/Colleges.jsx';
 import Login from './pages/Login/Login.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import SignUp from './pages/SingUp/SignUp.jsx';
+import ProfilePage from './ProfilePage/ProfilePage.jsx';
+import PrivateRoute from './route/PrivateRoute.jsx';
+import Admission from './pages/Admission/Admission.jsx';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -42,12 +45,20 @@ const router = createBrowserRouter([
       },
       {
         path:'/collegedetails/:id',
-        element: <CollegesDetails></CollegesDetails>,
+        element: <PrivateRoute><CollegesDetails></CollegesDetails></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:3000/collegedetails/${params.id}`)
+      },
+      {
+        path:'/admission',
+        element: <Admission></Admission>
       },
       {
         path:'/login',
         element: <Login></Login>
+      },
+      {
+        path:'/profile',
+        element: <ProfilePage></ProfilePage>
       },
       {
         path:'/signup',

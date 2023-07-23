@@ -92,6 +92,7 @@ const SignUp = () => {
             const userlogin = result.user;
             console.log(userlogin)
             setError('')
+            navigate(from, { replace: true });
         }).catch(err => {
             setError(err.message)
         })

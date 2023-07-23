@@ -2,10 +2,13 @@ import { AiFillPhone, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/
 import { ImLocation } from 'react-icons/im';
 import './Naviagarionbar.css'
 import { Link, NavLink, useLoaderData, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navigationbar = () => {
   const location = useLocation()
-  console.log(location)
+  const { user, logout } = useContext(AuthContext)
+  console.log(user)
     const Navigation = ()=>{
           return(
             <>
@@ -47,7 +50,7 @@ const Navigationbar = () => {
               </li>
             </NavLink>
             <NavLink
-              to="/treatments"
+              to="/admission"
               className={({ isActive }) =>
                 isActive ? "text-[#32589c] bg-base-200" : ""
               }
@@ -69,6 +72,17 @@ const Navigationbar = () => {
           </>
           )
     }
+
+
+    const handleLogout =()=>{
+      logout()
+      .then(()=>{})
+      .catch(err=>{
+        console.log(err)
+      })
+    }
+
+
     return (
        <div className='bg-slate-800'>
       {location?.pathname === '/' && <div className='lg:navbar lg:w-11/12 mx-auto text-slate-300 p-2 lg:p-0'>
@@ -89,7 +103,13 @@ const Navigationbar = () => {
         </div>
         <hr className='my-2'/>
         <div className="navbar-end mb-3 lg:mb-0">
-          <Link to='/login'><button>LOGIN</button></Link> 
+         {!user ?  <Link to='/login'><button>LOGIN</button></Link> : <div className="dropdown text-slate-900">
+  <label tabIndex={0} className="btn m-1">{user?.displayName}</label>
+  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+    <Link to='/profile'><li><a>Profile</a></li></Link>
+    <li onClick={handleLogout}><a>Log Out</a></li>
+  </ul>
+</div>}
           <div className="custom-divider"></div>
           <button> CONTACT</button>
           <div className="custom-divider"></div>
