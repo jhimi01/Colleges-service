@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import SubBanner from '../../component/SubBanner/SubBanner';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useColleges from '../../hooks/useColleges';
+import Swal from 'sweetalert2';
+import axios from 'axios'
 
 const Admission = () => {
   const [selectedCollege, setSelectedCollege] = useState("");
@@ -27,6 +29,23 @@ const Admission = () => {
       dateOfBirth,
     };
     console.log(candidateData);
+
+    axios.post('http://localhost:3000/admissions', candidateData )
+    .then((res)=>{
+        console.log('post', res.data)
+        
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          form.reset();
+    }) .catch((error) => {
+        console.error('Post request failed:', error);
+        // Handle error if the post request fails
+      });
   };
 
   return (
@@ -99,6 +118,7 @@ const Admission = () => {
                <span className="label-text">Email</span>
                 <input
                   className="input-secondary  w-full input input-bordered"
+                  value={user?.email}
                   type="email"
                   name="candidateEmail"
                   placeholder="Your Email"
