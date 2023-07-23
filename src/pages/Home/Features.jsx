@@ -1,6 +1,8 @@
 import React from 'react';
 import { AiFillPhone, AiFillProfile, AiOutlineClockCircle, AiOutlineFileProtect, AiOutlineSearch } from 'react-icons/ai';
 import { BiSolidSchool } from 'react-icons/bi';
+import { FaAward } from 'react-icons/fa';
+import { MdOutlineFestival } from 'react-icons/md';
 
 const Features = () => {
     return (
@@ -22,9 +24,9 @@ const Features = () => {
            <div className="custom-divider"></div>
            <p className='flex gap-3 items-center'><AiOutlineFileProtect className='text-4xl' />Efficient & Flexible</p>
            <div className="custom-divider"></div>
-           <p className='flex gap-3 items-center'><AiOutlineFileProtect className='text-4xl' />Awards Festival</p>
+           <p className='flex gap-3 items-center'><FaAward className='text-4xl' />Awards Festival</p>
            <div className="custom-divider"></div>
-           <p className='flex gap-3 items-center'><AiOutlineFileProtect className='text-4xl' />Events</p>
+           <p className='flex gap-3 items-center'><MdOutlineFestival className='text-4xl' />Events</p>
         </div>
      
        </div>

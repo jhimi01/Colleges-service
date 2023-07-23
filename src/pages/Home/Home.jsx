@@ -2,6 +2,7 @@ import React from 'react';
 import CollegesSearch from './CollegesSearch';
 import Features from './Features';
 import Gallery from './Gallery';
+import ResearchPaper from './ResearchPaper';
 
 const Home = () => {
     return (
@@ -29,6 +30,8 @@ const Home = () => {
         <Features></Features>
 
         <Gallery></Gallery>
+
+        <ResearchPaper></ResearchPaper>
        </>
     );
 };
