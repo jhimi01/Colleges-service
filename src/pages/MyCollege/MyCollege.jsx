@@ -59,7 +59,7 @@ const MyCollege = () => {
                     <td>{admis?._id.slice(0, 10)}</td>
                     <th className="relative">
                       <button
-                        className="btn btn-ghost btn-xs"
+                        className="btn bg-base-200 btn-xs "
                         onClick={() => handleFeedback(admis._id)}
                       >
                         add review

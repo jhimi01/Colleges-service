@@ -21,7 +21,7 @@ const Review = ({ onClose, onSubmitFeedback, img, author, collegeName }) => {
       collegeName
     };
 
-    axios.post('http://localhost:3000/review', reviewData)
+    axios.post('https://college-servic-server.vercel.app/review', reviewData)
     .then((res)=>{
         console.log('post', res.data)
         Swal.fire({

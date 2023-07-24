@@ -9,7 +9,7 @@ const useAdmission= ()=>{
     const { isLoading, data : admissions = [], refetch } = useQuery({
         queryKey: ['admissions', user?.email],
         queryFn: async () => {
-          const response = await fetch(`http://localhost:3000/admissions?email=${user?.email}`)
+          const response = await fetch(`https://college-servic-server.vercel.app/admissions?email=${user?.email}`)
           if (!response.ok) {
             throw new Error('Network response was not ok')
           }

@@ -30,7 +30,7 @@ const Admission = () => {
     };
     console.log(candidateData);
 
-    axios.post('http://localhost:3000/admissions', candidateData )
+    axios.post('https://college-servic-server.vercel.app/admissions', candidateData )
     .then((res)=>{
         console.log('post', res.data)
         

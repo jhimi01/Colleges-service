@@ -4,7 +4,7 @@ const useColleges = () => {
     const { isLoading, data : colleges = [], refetch } = useQuery({
         queryKey: ['colleges'],
         queryFn: async () => {
-            const response = await fetch('http://localhost:3000/colleges')
+            const response = await fetch('https://college-servic-server.vercel.app/colleges')
             if (!response.ok) {
               throw new Error('Network response was not ok')
             }
