@@ -5,11 +5,13 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import useColleges from '../../hooks/useColleges';
 import Swal from 'sweetalert2';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const Admission = () => {
   const [selectedCollege, setSelectedCollege] = useState("");
   const { user } = useContext(AuthContext);
   const { colleges } = useColleges();
+  const navigate = useNavigate()
 
   const handleAddCandidate = (e) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ const Admission = () => {
     axios.post('https://college-servic-server.vercel.app/admissions', candidateData )
     .then((res)=>{
         console.log('post', res.data)
-        
+        navigate('/mycollege')
         Swal.fire({
             position: 'top-end',
             icon: 'success',
