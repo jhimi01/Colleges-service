@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import signupsvg from '../../../public/signup.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { FcGoogle } from 'react-icons/fc';
 import { useForm } from 'react-hook-form';
@@ -13,7 +13,9 @@ const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset  } = useForm();
     const { signupEmail, logingoogle, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')
- 
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     
     const onSubmit = async data => {
       const {name, email, password, image} = data
