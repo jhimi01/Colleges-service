@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { Rating } from '@smastrom/react-rating';
 
-// import './ReviewSection.css'; // Import your custom CSS file for styling
+
 import { EffectCreative } from 'swiper/modules';
 
 const ReviewSection = () => {
@@ -37,7 +37,7 @@ const ReviewSection = () => {
         className="mySwiper2">
         {reviews.map((rev, index) => (
           <SwiperSlide key={index} className="swiper-slide card">
-            <div className="bg-white card-body text-center md:w-1/2">
+            <div className="bg-white card-body text-center md:w-1/2 mx-auto">
               <img className="w-32 mx-auto h-32 rounded-full object-cover" src={rev?.userPhotoURL} alt="" />
               <p className="text-3xl">{rev?.collegeName}</p>
               <p className="text-2xl capitalize">author : {rev?.collegeAuthorName}</p>
