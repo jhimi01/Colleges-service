@@ -4,7 +4,7 @@ import '@smastrom/react-rating/style.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const Review = ({ onClose, onSubmitFeedback, img, author }) => {
+const Review = ({ onClose, onSubmitFeedback, img, author, collegeName }) => {
   const [rating, setRating] = useState(0);
   const [feedbackText, setFeedbackText] = useState('');
 
@@ -18,6 +18,7 @@ const Review = ({ onClose, onSubmitFeedback, img, author }) => {
       feedbackText,
       userPhotoURL: img, 
       collegeAuthorName: author, 
+      collegeName
     };
 
     axios.post('http://localhost:3000/review', reviewData)

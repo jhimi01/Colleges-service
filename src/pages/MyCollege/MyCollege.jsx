@@ -68,6 +68,7 @@ const MyCollege = () => {
                         <div className="absolute bg-white p-3 rounded-lg shadow-lg z-10">
                           <Review
                             img={user?.photoURL}
+                            collegeName={admis?.college}
                             author={user?.displayName}
                             onClose={() => setFeedback(false)}
                             onSubmitFeedback={(rating, feedbackText) =>

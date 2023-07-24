@@ -1,43 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { Rating } from '@smastrom/react-rating';
+
+import './ReviewSection.css'; // Import your custom CSS file for styling
+import { EffectCreative } from 'swiper/modules';
 
 const ReviewSection = () => {
-    const reviewsData = [
-        {
-          name: 'John Smith',
-          rating: 4.5,
-          comment:
-            'I had a great experience with this product. It exceeded my expectations, and the customer service was top-notch.',
-        },
-        {
-          name: 'Emily Johnson',
-          rating: 5,
-          comment:
-            'This is by far the best product I have ever purchased. The quality is outstanding, and I highly recommend it to everyone.',
-        },
-        // Add more review objects for additional reviews
-      ];
-    
-      return (
-        <div className="container mx-auto px-4 py-8 mb-20">
-          <h2 className="text-3xl font-bold mb-4">Customer Reviews</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {reviewsData.map((review, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex items-center mb-2">
-                  <h3 className="text-lg font-semibold mr-2">{review.name}</h3>
-                  <span className="text-yellow-500">
-                    {Array.from({ length: Math.floor(review.rating) }, (_, i) => (
-                      <i key={i} className="fas fa-star"></i>
-                    ))}
-                    {review.rating % 1 !== 0 && <i className="fas fa-star-half"></i>}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-600 mb-4">{review.comment}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch('https://college-servic-server.vercel.app/review')
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+        console.log('review', data);
+      });
+  }, []);
+
+  return (
+    <div className='bg-base-200 py-10 my-20 '>
+      <Swiper   grabCursor={true}
+        effect={'creative'}
+        creativeEffect={{
+          prev: {
+            shadow: true,
+            translate: ['-120%', 0, -500],
+          },
+          next: {
+            shadow: true,
+            translate: ['120%', 0, -500],
+          },
+        }}
+        modules={[EffectCreative]}
+        className="mySwiper2">
+        {reviews.map((rev, index) => (
+          <SwiperSlide key={index} className="swiper-slide card">
+            <div className="bg-white card-body text-center w-1/2">
+              <img className="w-32 mx-auto h-32 rounded-full object-cover" src={rev?.userPhotoURL} alt="" />
+              <p className="text-3xl">{rev?.collegeName}</p>
+              <p className="text-2xl capitalize">author : {rev?.collegeAuthorName}</p>
+              <p className="feedback-text">{rev?.feedbackText}</p>
+              <Rating className='text-center mx-auto' style={{ maxWidth: 180, }} value={rev?.rating} readOnly />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default ReviewSection;
