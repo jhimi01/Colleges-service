@@ -18,6 +18,7 @@ const ProfilePage = () => {
            <div className=' text-center flex flex-col justify-center items-center '>
            <img className='w-52 h-52 object-cover -mt-24 rounded-full' src={user?.photoURL} />
             <p className='text-3xl text-center capitalize'>Name : {user?.displayName}</p>
+            <p className='text-2xl text-center capitalize'>Email : {user?.email}</p>
            </div>
         </div>
         </div>
