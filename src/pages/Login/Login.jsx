@@ -16,14 +16,11 @@ const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    console.log(location)
 
     const onSubmit = data => {
-        // console.log(data.email)
         loginWithEmail(data?.email, data?.password)
         .then(result => {
             const userlogin = result.user;
-            console.log(userlogin)
             Swal.fire({
               position: 'top-end',
               icon: 'success',
@@ -42,7 +39,6 @@ const Login = () => {
         logingoogle()
         .then(result => {
             const userlogin = result?.user;
-            // console.log(userlogin)
             setError('')
             Swal.fire({
               position: 'top-end',

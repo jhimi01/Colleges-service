@@ -10,7 +10,6 @@ const MyCollege = () => {
   const [activeFeedbackId, setActiveFeedbackId] = useState(null);
   const [feedbackText, setFeedbackText] = useState("");
   const { user } = useContext(AuthContext);
-  //   console.log(user?.photoURL)
 
   const { admissions } = useAdmission();
 
@@ -20,11 +19,6 @@ const MyCollege = () => {
   };
 
   const handleSubmitFeedback = (id) => {
-    // Handle feedback submission to the server here
-    console.log("Submitting feedback for admission ID:", id);
-    console.log("Feedback:", feedbackText);
-    // You can send the feedback to the server using API calls or any other method
-
     setFeedback(false); // Close the feedback modal
     setActiveFeedbackId(null); // Reset the active feedback ID
     setFeedbackText(""); // Clear the feedback text
@@ -41,7 +35,11 @@ const MyCollege = () => {
           Admission List{" "}
         </h2>
         <table className="table-lg table-zebra mx-auto">
-          <thead>
+         
+         
+            {admissions.length > 0 ? (
+              <>
+              <thead>
             <tr>
               <th></th>
               <th>College Name</th>
@@ -51,10 +49,8 @@ const MyCollege = () => {
               <th>Provide Review</th>
             </tr>
           </thead>
-          <tbody>
-            {admissions.length > 0 ? (
-              <>
                 {admissions.map((admis, index) => (
+                    <tbody>
                   <tr key={index}>
                     <th>{index + 1}</th>
                     <td>{admis?.college}</td>
@@ -86,6 +82,7 @@ const MyCollege = () => {
                       )}
                     </th>
                   </tr>
+                  </tbody>
                 ))}
               </>
             ) : (
@@ -93,7 +90,7 @@ const MyCollege = () => {
                 No data found
               </p>
             )}
-          </tbody>
+          
         </table>
       </div>
     </div>
