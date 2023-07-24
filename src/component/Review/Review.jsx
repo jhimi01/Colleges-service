@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Review = ({ onClose, onSubmitFeedback, img, author }) => {
   const [rating, setRating] = useState(0);
@@ -11,20 +13,34 @@ const Review = ({ onClose, onSubmitFeedback, img, author }) => {
   };
 
   const handleSubmit = () => {
-    // Construct the review object
     const reviewData = {
       rating,
       feedbackText,
-      userPhotoURL: img, // Use the img prop passed from MyCollege component
-      collegeAuthorName: author, // Use the author prop passed from MyCollege component
+      userPhotoURL: img, 
+      collegeAuthorName: author, 
     };
 
-    console.log(reviewData)
-    // Call the onSubmitFeedback function with the review data
-    onSubmitFeedback(reviewData);
-
-    // Close the modal after submitting
-    onClose();
+    axios.post('http://localhost:3000/review', reviewData)
+    .then((res)=>{
+        console.log('post', res.data)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Feedback done',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          console.log(reviewData)
+          // Call the onSubmitFeedback function with the review data
+          onSubmitFeedback(reviewData);
+      
+          // Close the modal after submitting
+          onClose();
+    }) .catch((error) => {
+        console.error('Post request failed:', error);
+        // Handle error if the post request fails
+      });
+   
   };
 
   return (

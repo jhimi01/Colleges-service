@@ -62,7 +62,7 @@ const MyCollege = () => {
                         className="btn btn-ghost btn-xs"
                         onClick={() => handleFeedback(admis._id)}
                       >
-                        review
+                        add review
                       </button>
                       {feedback && activeFeedbackId === admis._id && (
                         <div className="absolute bg-white p-3 rounded-lg shadow-lg z-10">
