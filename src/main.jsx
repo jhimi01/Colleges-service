@@ -24,6 +24,7 @@ import ProfilePage from './ProfilePage/ProfilePage.jsx';
 import PrivateRoute from './route/PrivateRoute.jsx';
 import Admission from './pages/Admission/Admission.jsx';
 import MyCollege from './pages/MyCollege/MyCollege.jsx';
+import { Lines } from 'react-preloaders';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -80,6 +81,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider>
    <QueryClientProvider client={queryClient}>
    <RouterProvider router={router} />
+   <Lines background="#f7f7f7" color={'#273c75'} />
     </QueryClientProvider> 
   </AuthProvider>
   </React.StrictMode>,
