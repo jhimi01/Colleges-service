@@ -1,65 +1,103 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import SubBanner from '../../component/SubBanner/SubBanner';
-import useAdmission from '../../hooks/useAdmission';
+import React, { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
+import SubBanner from "../../component/SubBanner/SubBanner";
+import useAdmission from "../../hooks/useAdmission";
+import Review from "../../component/Review/Review";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyCollege = () => {
+  const [feedback, setFeedback] = useState(false);
+  const [activeFeedbackId, setActiveFeedbackId] = useState(null);
+  const [feedbackText, setFeedbackText] = useState("");
+  const { user } = useContext(AuthContext);
+  //   console.log(user?.photoURL)
 
-    const { admissions } = useAdmission();
-    console.log(admissions)
+  const { admissions } = useAdmission();
 
-    return (
-        <div className='min-h-screen'>
-        <Helmet>
+  const handleFeedback = (id) => {
+    setActiveFeedbackId(id);
+    setFeedback(!feedback);
+  };
+
+  const handleSubmitFeedback = (id) => {
+    // Handle feedback submission to the server here
+    console.log("Submitting feedback for admission ID:", id);
+    console.log("Feedback:", feedbackText);
+    // You can send the feedback to the server using API calls or any other method
+
+    setFeedback(false); // Close the feedback modal
+    setActiveFeedbackId(null); // Reset the active feedback ID
+    setFeedbackText(""); // Clear the feedback text
+  };
+
+  return (
+    <div className="min-h-screen">
+      <Helmet>
         <title>My College | College</title>
       </Helmet>
-      <SubBanner headerTitle={'My College'}></SubBanner>   
-
+      <SubBanner headerTitle={"My College"} />
       <div className="overflow-x-auto lg:w-11/12 bg-base-300 mx-auto my-10 px-2 lg:px-0 py-5">
-  <h2 className='text-center font-semibold text-3xl py-5'>Admission List </h2>
-  <table className="table-lg table-zebra mx-auto">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>College Name</th>
-        <th>Subject</th>
-        <th>My Number</th>
-        <th>Student Id</th>
-        <th>Provide Review</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      
-      {admissions.length > 0 ? <>
-        {admissions.map((admis, index)=> <tr key={index}>
-        <th>{index + 1}</th>
-        <td>{admis?.college}</td>
-        <td>{admis?.subject}</td>
-        <td>{admis?.candidatePhone}</td>
-        <td>{admis?._id.slice(0, 10)}</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">review</button>
-        </th>
-      </tr> )}
-      </> : <p className='text-2xl text-gray-600 text-center my-5 uppercase'>"no data found"</p>}
-    </tbody>
-  </table>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-    );
+        <h2 className="text-center font-semibold text-3xl py-5">
+          Admission List{" "}
+        </h2>
+        <table className="table-lg table-zebra mx-auto">
+          <thead>
+            <tr>
+              <th></th>
+              <th>College Name</th>
+              <th>Subject</th>
+              <th>My Number</th>
+              <th>Student Id</th>
+              <th>Provide Review</th>
+            </tr>
+          </thead>
+          <tbody>
+            {admissions.length > 0 ? (
+              <>
+                {admissions.map((admis, index) => (
+                  <tr key={index}>
+                    <th>{index + 1}</th>
+                    <td>{admis?.college}</td>
+                    <td>{admis?.subject}</td>
+                    <td>{admis?.candidatePhone}</td>
+                    <td>{admis?._id.slice(0, 10)}</td>
+                    <th className="relative">
+                      <button
+                        className="btn btn-ghost btn-xs"
+                        onClick={() => handleFeedback(admis._id)}
+                      >
+                        review
+                      </button>
+                      {feedback && activeFeedbackId === admis._id && (
+                        <div className="absolute bg-white p-3 rounded-lg shadow-lg z-10">
+                          <Review
+                            img={user?.photoURL}
+                            author={user?.displayName}
+                            onClose={() => setFeedback(false)}
+                            onSubmitFeedback={(rating, feedbackText) =>
+                              handleSubmitFeedback(
+                                admis._id,
+                                rating,
+                                feedbackText
+                              )
+                            }
+                          />
+                        </div>
+                      )}
+                    </th>
+                  </tr>
+                ))}
+              </>
+            ) : (
+              <p className="text-2xl text-gray-600 text-center my-5 uppercase">
+                No data found
+              </p>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default MyCollege;
